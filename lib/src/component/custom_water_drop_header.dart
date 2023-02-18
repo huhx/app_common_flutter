@@ -1,3 +1,5 @@
+import 'package:app_common_flutter/src/common/constant/comm_constant.dart';
+import 'package:app_common_flutter/src/common/constant/icon_constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -20,7 +22,12 @@ class CustomWaterDropHeader extends StatelessWidget {
       complete: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const SvgIcon(name: 'refresh_done', color: Colors.grey, size: 17),
+          const SvgIcon(
+            name: IconName.refreshDone,
+            color: Colors.grey,
+            size: 17,
+            package: Comm.package,
+          ),
           const SizedBox(width: 10),
           Text(
             refreshString.refreshCompleteText!,

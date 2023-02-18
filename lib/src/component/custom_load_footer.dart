@@ -1,3 +1,5 @@
+import 'package:app_common_flutter/src/common/constant/comm_constant.dart';
+import 'package:app_common_flutter/src/common/constant/icon_constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -18,7 +20,7 @@ class CustomLoadFooter extends StatelessWidget {
       canLoadingIcon: CupertinoActivityIndicator(),
       noDataText: "已展示全部数据",
       spacing: 8,
-      noMoreIcon: SvgIcon(name: "smile", size: 18),
+      noMoreIcon: SvgIcon(name: IconName.smile, size: 18, package: Comm.package),
     );
   }
 }
