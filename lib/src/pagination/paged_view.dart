@@ -5,7 +5,10 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'stream_list.dart';
 
-typedef PagedViewBuilder<T> = BoxScrollView Function(BuildContext context, List<T> content);
+typedef PagedViewBuilder<T> = BoxScrollView Function(
+  BuildContext context,
+  List<T> content,
+);
 
 class PagedView<T> extends StatelessWidget {
   final StreamList<T> streamList;

@@ -32,7 +32,10 @@ class ListTileItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             title,
-            DefaultTextStyle(style: const TextStyle(color: Colors.grey), child: subtitle!),
+            DefaultTextStyle(
+              style: const TextStyle(color: Colors.grey),
+              child: subtitle!,
+            ),
           ],
         ),
       );
