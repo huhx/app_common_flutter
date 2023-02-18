@@ -1,8 +1,17 @@
+import 'package:app_common_flutter/constant.dart';
 import 'package:intl/intl.dart';
 
 extension DateExtension on DateTime {
-  String toDateString({String pattern = "yyyy-MM-dd"}) {
+  String format(String pattern) {
     return DateFormat(pattern).format(this);
+  }
+
+  String get dateString {
+    return DateFormat(Comm.datePattern).format(this);
+  }
+
+  String get dateTimeString {
+    return DateFormat(Comm.dateTimePattern).format(this);
   }
 
   bool isSameDay(DateTime dateTime) {
