@@ -15,8 +15,4 @@
     "editor.fontFamily": "Monaco, 'Courier New', monospace",
     "editor.fontSize": 12,
     "dart.closingLabels": false,
-    "dart.lineLength": 140,
-    "editor.rulers": [
-        140
-    ],
 }
