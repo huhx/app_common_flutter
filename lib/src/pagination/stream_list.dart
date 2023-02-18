@@ -67,17 +67,17 @@ class StreamList<T> {
   }) {
     final bool isLastPage = list.length < pageSize;
     if (isLastPage) {
-      _appendLastPage(reverse, list);
+      appendLastPage(reverse, list);
     } else {
-      _appendPage(reverse, list, pageKey + 1);
+      appendPage(reverse, list, pageKey + 1);
     }
   }
 
-  void _appendLastPage(bool reverse, List<T> newItems) {
-    _appendPage(reverse, newItems, null);
+  void appendLastPage(bool reverse, List<T> newItems) {
+    appendPage(reverse, newItems, null);
   }
 
-  void _appendPage(bool reverse, List<T> newItems, int? nextPageKey) {
+  void appendPage(bool reverse, List<T> newItems, int? nextPageKey) {
     final List<T> previousItems = pageState.itemList ?? [];
     final List<T> itemList =
         reverse ? newItems + previousItems : previousItems + newItems;
