@@ -20,6 +20,19 @@ extension DateExtension on DateTime {
         day == dateTime.day;
   }
 
+  bool get isToday => isSameDay(DateTime.now());
+
+  int get age {
+    final DateTime currentDate = DateTime.now();
+    final int currentMonth = currentDate.month;
+    final int birthdayMonth = month;
+    if (birthdayMonth > currentMonth ||
+        (currentMonth == birthdayMonth && currentDate.day < day)) {
+      return currentDate.year - year - 1;
+    }
+    return currentDate.year - year;
+  }
+
   DateTime get toDate => DateTime(year, month, day);
 
   DateTime get previous => add(const Duration(days: -1));
