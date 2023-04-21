@@ -22,4 +22,17 @@ extension ContextExtension on BuildContext {
       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
     );
   }
+
+  bool isMobile() {
+    return MediaQuery.of(this).size.width < 600;
+  }
+
+  bool isTablet() {
+    final double width = MediaQuery.of(this).size.width;
+    return width < 1000 && width >= 600;
+  }
+
+  bool isDesktop() {
+    return MediaQuery.of(this).size.width >= 1000;
+  }
 }

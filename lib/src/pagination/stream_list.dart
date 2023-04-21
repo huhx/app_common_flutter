@@ -79,8 +79,7 @@ class StreamList<T> {
 
   void appendPage(bool reverse, List<T> newItems, int? nextPageKey) {
     final List<T> previousItems = pageState.itemList ?? [];
-    final List<T> itemList =
-        reverse ? newItems + previousItems : previousItems + newItems;
+    final List<T> itemList = reverse ? newItems + previousItems : previousItems + newItems;
     pageState = PageState<int, T>(
       itemList: itemList,
       error: null,
