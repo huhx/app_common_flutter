@@ -15,9 +15,7 @@ extension DateExtension on DateTime {
   }
 
   bool isSameDay(DateTime dateTime) {
-    return year == dateTime.year &&
-        month == dateTime.month &&
-        day == dateTime.day;
+    return year == dateTime.year && month == dateTime.month && day == dateTime.day;
   }
 
   bool get isToday => isSameDay(DateTime.now());
@@ -26,8 +24,7 @@ extension DateExtension on DateTime {
     final DateTime currentDate = DateTime.now();
     final int currentMonth = currentDate.month;
     final int birthdayMonth = month;
-    if (birthdayMonth > currentMonth ||
-        (currentMonth == birthdayMonth && currentDate.day < day)) {
+    if (birthdayMonth > currentMonth || (currentMonth == birthdayMonth && currentDate.day < day)) {
       return currentDate.year - year - 1;
     }
     return currentDate.year - year;

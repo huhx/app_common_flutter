@@ -11,8 +11,7 @@ extension IntExtension on int {
   }
 
   String format(String pattern) {
-    return DateFormat(pattern)
-        .format(DateTime.fromMillisecondsSinceEpoch(this));
+    return DateFormat(pattern).format(DateTime.fromMillisecondsSinceEpoch(this));
   }
 
   String get timeString {
