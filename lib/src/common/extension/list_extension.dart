@@ -7,6 +7,18 @@ extension ListExtension<T> on List<T> {
     return isEmpty ? null : last;
   }
 
+  bool containsAny(List<T> values) {
+    return values.any((element) => contains(element));
+  }
+
+  bool containsAll(List<T> values) {
+    return values.every((element) => contains(element));
+  }
+
+  bool containsNone(List<T> values) {
+    return values.every((element) => !contains(element));
+  }
+
   List<T> addOrRemove(T value) {
     if (contains(value)) {
       remove(value);
