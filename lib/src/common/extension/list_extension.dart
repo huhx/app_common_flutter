@@ -41,4 +41,17 @@ extension ListExtension<T> on List<T> {
       yield convert(index, this[index]);
     }
   }
+
+  List<T> copyWith(T element) {
+    return List.from(this)..add(element);
+  }
+
+  List<T> copyWithAll(List<T> elements) {
+    return List.from(this)..addAll(elements);
+  }
+
+  void reset(List<T> elements) {
+    clear();
+    addAll(elements);
+  }
 }
