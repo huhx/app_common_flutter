@@ -1,3 +1,4 @@
+import 'package:app_common_flutter/src/component/cancel_confirm_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -20,6 +21,21 @@ extension ContextExtension on BuildContext {
       title,
       subject: subject,
       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+    );
+  }
+
+  void showCommDialog({
+    required VoidCallback callback,
+    title = '删除',
+    content = '确定要删除?',
+  }) {
+    showDialog(
+      context: this,
+      builder: (_) => CancelConfirmDialog(
+        title: title,
+        content: content,
+        callback: callback,
+      ),
     );
   }
 
