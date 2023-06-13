@@ -1,7 +1,22 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
+
 class AppConfig {
+  static final AppConfig _singleton = AppConfig._internal();
+
+  factory AppConfig() => _singleton;
+
   AppConfig._internal();
 
   static Map<String, dynamic> appConfig = <String, dynamic>{};
+
+  Future<AppConfig> loadFromAsset(String name) async {
+    final String content = await rootBundle.loadString(name);
+    final Map<String, dynamic> configAsMap = json.decode(content);
+    appConfig.addAll(configAsMap);
+    return _singleton;
+  }
 
   static dynamic get(String key) {
     return _getValue(key);
