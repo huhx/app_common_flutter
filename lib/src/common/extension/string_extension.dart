@@ -20,11 +20,7 @@ extension StringExtension on String {
 
   String repeat(int times) {
     assert(times > 0);
-    String result = '';
-    for (int i = 0; i < times; i++) {
-      result += this;
-    }
-    return result;
+    return this * times;
   }
 
   String capitalize() {

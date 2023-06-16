@@ -17,12 +17,16 @@ void main() {
   });
 
   group("test the repeat", () {
-    test("single character", () {
-      final String result = "a".capitalize();
+    test("repeat method", () {
+      final String result = "a".repeat(11);
 
-      expect(result, "A");
+      expect(result, "aaaaaaaaaaa");
     });
 
-  });
+    test("multiple operaotr", () {
+      final String result = "a" * 11;
 
+      expect(result, "aaaaaaaaaaa");
+    });
+  });
 }
