@@ -11,8 +11,20 @@ extension ContextExtension on BuildContext {
     return MediaQuery.of(this).platformBrightness == Brightness.light;
   }
 
-  ColorScheme get colorScheme => Theme.of(this).colorScheme;
-  TextTheme get textTheme => Theme.of(this).textTheme;
+  ColorScheme get colorScheme {
+    return Theme.of(this).colorScheme;
+  }
+
+  TextTheme get textTheme {
+    return Theme.of(this).textTheme;
+  }
+
+  void closeKeyboard() {
+    final FocusScopeNode focusScopeNode = FocusScope.of(this);
+    if (!focusScopeNode.hasPrimaryFocus) {
+      focusScopeNode.unfocus();
+    }
+  }
 
   Future<void> share({
     required String title,
