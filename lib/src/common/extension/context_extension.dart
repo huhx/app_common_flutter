@@ -11,12 +11,20 @@ extension ContextExtension on BuildContext {
     return MediaQuery.of(this).platformBrightness == Brightness.light;
   }
 
+  ThemeData get theme {
+    return Theme.of(this);
+  }
+
   ColorScheme get colorScheme {
     return Theme.of(this).colorScheme;
   }
 
   TextTheme get textTheme {
     return Theme.of(this).textTheme;
+  }
+
+  Size get size {
+    return MediaQuery.of(this).size;
   }
 
   void closeKeyboard() {
