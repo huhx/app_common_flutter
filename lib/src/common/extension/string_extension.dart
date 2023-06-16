@@ -18,6 +18,23 @@ extension StringExtension on String {
     return DateFormat(pattern).parse(this);
   }
 
+  String repeat(int times) {
+    assert(times > 0);
+    String result = '';
+    for (int i = 0; i < times; i++) {
+      result += this;
+    }
+    return result;
+  }
+
+  String capitalize() {
+    return this[0].toUpperCase() + substring(1).toLowerCase();
+  }
+
+  String reverse() {
+    return String.fromCharCodes(runes.toList().reversed);
+  }
+
   List<String> chunk(int chunkSize) {
     assert(chunkSize > 0);
     final int chunkCount = (length / chunkSize).ceil();
