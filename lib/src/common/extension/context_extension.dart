@@ -16,21 +16,24 @@ extension ContextExtension on BuildContext {
   }
 
   ColorScheme get colorScheme {
-    return Theme.of(this).colorScheme;
+    return theme.colorScheme;
   }
 
   TextTheme get textTheme {
-    return Theme.of(this).textTheme;
+    return theme.textTheme;
   }
 
   Size get size {
     return MediaQuery.of(this).size;
   }
 
+  FocusScopeNode get focusScope {
+    return FocusScope.of(this);
+  }
+
   void closeKeyboard() {
-    final FocusScopeNode focusScopeNode = FocusScope.of(this);
-    if (!focusScopeNode.hasPrimaryFocus) {
-      focusScopeNode.unfocus();
+    if (!focusScope.hasPrimaryFocus) {
+      focusScope.unfocus();
     }
   }
 
