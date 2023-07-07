@@ -36,8 +36,8 @@ class PagedView<T> extends StatelessWidget {
 
         return SmartRefresher(
           controller: streamList.refreshController,
-          onRefresh: () => streamList.onRefresh(),
-          onLoading: () => streamList.onLoading(),
+          onRefresh: streamList.onRefresh,
+          onLoading: streamList.onLoading,
           enablePullUp: true,
           child: builder(context, content),
         );
