@@ -31,6 +31,15 @@ extension ContextExtension on BuildContext {
     return FocusScope.of(this);
   }
 
+  void showSnackBar(String content, {duration = 1}) {
+    ScaffoldMessenger.of(this).showSnackBar(
+      SnackBar(
+        content: Text(content),
+        duration: Duration(seconds: duration),
+      ),
+    );
+  }
+
   void closeKeyboard() {
     if (!focusScope.hasPrimaryFocus) {
       focusScope.unfocus();
