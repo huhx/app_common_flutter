@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 extension ScrollExtension on ScrollController {
-  void initScrollEvent(Function(bool) callback, {int scrollThreshold = 50}) {
+  void initScrollEvent(
+    Function(bool) callback, {
+    int scrollThreshold = 50,
+  }) {
     bool showBtn = true;
     addListener(() {
       if (offset > position.maxScrollExtent - scrollThreshold &&

@@ -11,25 +11,15 @@ extension ContextExtension on BuildContext {
     return MediaQuery.of(this).platformBrightness == Brightness.light;
   }
 
-  ThemeData get theme {
-    return Theme.of(this);
-  }
+  ThemeData get theme => Theme.of(this);
 
-  ColorScheme get colorScheme {
-    return theme.colorScheme;
-  }
+  ColorScheme get colorScheme => theme.colorScheme;
 
-  TextTheme get textTheme {
-    return theme.textTheme;
-  }
+  TextTheme get textTheme => theme.textTheme;
 
-  Size get size {
-    return MediaQuery.of(this).size;
-  }
+  Size get size => MediaQuery.of(this).size;
 
-  FocusScopeNode get focusScope {
-    return FocusScope.of(this);
-  }
+  FocusScopeNode get focusScope => FocusScope.of(this);
 
   void showSnackBar(String content, {duration = 1}) {
     ScaffoldMessenger.of(this).showSnackBar(

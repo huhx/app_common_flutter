@@ -1,11 +1,7 @@
 extension ListExtension<T> on List<T> {
-  T? get firstOrNull {
-    return isEmpty ? null : first;
-  }
+  T? get firstOrNull => isEmpty ? null : first;
 
-  T? get lastOrNull {
-    return isEmpty ? null : last;
-  }
+  T? get lastOrNull => isEmpty ? null : last;
 
   bool containsAny(List<T> values) {
     return values.any((element) => contains(element));
@@ -43,11 +39,15 @@ extension ListExtension<T> on List<T> {
   }
 
   List<T> copyWith(T element) {
-    return List.from(this)..add(element);
+    return [...this, element];
+  }
+
+  List<T> insertWith(T element) {
+    return [element, ...this];
   }
 
   List<T> copyWithAll(List<T> elements) {
-    return List.from(this)..addAll(elements);
+    return [...this, ...elements];
   }
 
   void reset(List<T> elements) {
