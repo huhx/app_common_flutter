@@ -10,6 +10,11 @@ extension DateExtension on DateTime {
     return DateFormat(Comm.datePattern).format(this);
   }
 
+  String get weekdayName {
+    const List<String> list = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'];
+    return list[weekday - 1];
+  }
+
   String get dateTimeString {
     return DateFormat(Comm.dateTimePattern).format(this);
   }
