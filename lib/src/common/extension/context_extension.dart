@@ -49,12 +49,12 @@ extension ContextExtension on BuildContext {
     );
   }
 
-  void showCommDialog({
+  Future<void> showCommDialog({
     required VoidCallback callback,
     title = '删除',
     content = '确定要删除?',
-  }) {
-    showDialog(
+  }) async {
+    await showDialog(
       context: this,
       builder: (_) => CancelConfirmDialog(
         title: title,
