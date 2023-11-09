@@ -11,7 +11,7 @@ class ListTileTrailing extends StatelessWidget {
   Widget build(BuildContext context) {
     return const IconTheme(
       data: IconThemeData(color: Colors.grey),
-      child: SvgIcon(name: IconName.right, size: 14, package: Comm.package),
+      child: SvgIcon(name: CommIconName.right, size: 14, package: Comm.package),
     );
   }
 }

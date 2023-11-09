@@ -12,7 +12,7 @@ class AppbarBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: const SvgIcon(name: IconName.back, size: 18, package: Comm.package),
+      icon: const SvgIcon(name: CommIconName.back, size: 18, package: Comm.package),
       onPressed: callback ?? () => Navigator.pop(context),
     );
   }

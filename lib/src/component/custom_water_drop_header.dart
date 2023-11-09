@@ -23,7 +23,7 @@ class CustomWaterDropHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           const SvgIcon(
-            name: IconName.refreshDone,
+            name: CommIconName.refreshDone,
             color: Colors.grey,
             size: 17,
             package: Comm.package,

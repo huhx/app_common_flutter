@@ -21,7 +21,7 @@ class CustomLoadFooter extends StatelessWidget {
       noDataText: "已展示全部数据",
       spacing: 8,
       noMoreIcon: SvgIcon(
-        name: IconName.smile,
+        name: CommIconName.smile,
         size: 18,
         package: Comm.package,
       ),

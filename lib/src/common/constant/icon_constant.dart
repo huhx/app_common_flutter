@@ -1,4 +1,6 @@
-class IconName {
+class CommIconName {
+  const CommIconName._();
+
   static const String back = "back";
   static const String dark = "dark_mode";
   static const String delete = "delete";
