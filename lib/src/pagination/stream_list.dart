@@ -59,6 +59,30 @@ class StreamList<T> {
     _refreshController.loadComplete();
   }
 
+  void insert(T newItem) {
+    final List<T> previousItems = pageState.itemList ?? [];
+    final List<T> itemList = [newItem, ...previousItems];
+    pageState = PageState<int, T>(
+      itemList: itemList,
+      error: null,
+      nextKey: pageState.nextKey,
+    );
+
+    _streamController.add(itemList);
+  }
+
+  void append(T newItem) {
+    final List<T> previousItems = pageState.itemList ?? [];
+    final List<T> itemList = [...previousItems, newItem];
+    pageState = PageState<int, T>(
+      itemList: itemList,
+      error: null,
+      nextKey: pageState.nextKey,
+    );
+
+    _streamController.add(itemList);
+  }
+
   void fetch(
     List<T> list,
     int pageKey, {

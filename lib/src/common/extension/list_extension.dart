@@ -38,18 +38,22 @@ extension ListExtension<T> on List<T> {
     }
   }
 
+  @Deprecated("use ... instead")
   List<T> copyWith(T element) {
     return [...this, element];
   }
 
+  @Deprecated("use ... instead")
   List<T> insertWith(T element) {
     return [element, ...this];
   }
 
+  @Deprecated("use ... instead")
   List<T> copyWithAll(List<T> elements) {
     return [...this, ...elements];
   }
 
+  @Deprecated("use ... instead")
   void reset(List<T> elements) {
     clear();
     addAll(elements);
