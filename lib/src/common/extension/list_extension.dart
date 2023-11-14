@@ -24,20 +24,6 @@ extension ListExtension<T> on List<T> {
     return this;
   }
 
-  Map<K, List<T>> groupBy<K>(K Function(T element) keyOf) {
-    var result = <K, List<T>>{};
-    for (final T element in this) {
-      (result[keyOf(element)] ??= []).add(element);
-    }
-    return result;
-  }
-
-  Iterable<R> mapIndexed<R>(R Function(int index, T element) convert) sync* {
-    for (int index = 0; index < length; index++) {
-      yield convert(index, this[index]);
-    }
-  }
-
   @Deprecated("use ... instead")
   List<T> copyWith(T element) {
     return [...this, element];
