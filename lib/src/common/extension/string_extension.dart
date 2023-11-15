@@ -23,6 +23,14 @@ extension StringExtension on String {
     return this * times;
   }
 
+  bool get isImage {
+    return [".jpg", ".jpeg", ".png", ".webp"].any((suffix) => endsWith(suffix));
+  }
+
+  bool get isVideo {
+    return [".mp4", ".mov"].any((suffix) => endsWith(suffix));
+  }
+
   String capitalize() {
     return this[0].toUpperCase() + substring(1).toLowerCase();
   }
