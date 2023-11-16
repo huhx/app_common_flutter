@@ -65,7 +65,7 @@ class CustomizeButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 35),
       ),
       onPressed: onPressed,
-      child: Text(text),
+      child: Text(text, style: const TextStyle(color: Colors.white)),
     );
   }
 }
