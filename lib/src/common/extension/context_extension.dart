@@ -1,3 +1,4 @@
+import 'package:app_common_flutter/src/common/constant/enum.dart';
 import 'package:app_common_flutter/src/component/cancel_confirm_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
@@ -29,6 +30,21 @@ extension ContextExtension on BuildContext {
         duration: Duration(seconds: duration),
       ),
     );
+  }
+
+  ScreenType screenType() {
+    final MediaQueryData mediaQueryData = MediaQuery.of(this);
+    final Orientation orientation = mediaQueryData.orientation;
+    final double deviceWidth =
+        orientation == Orientation.landscape ? mediaQueryData.size.height : mediaQueryData.size.width;
+
+    if (deviceWidth > 950) {
+      return ScreenType.desktop;
+    }
+    if (deviceWidth > 600) {
+      return ScreenType.tablet;
+    }
+    return ScreenType.mobile;
   }
 
   void closeKeyboard() {
