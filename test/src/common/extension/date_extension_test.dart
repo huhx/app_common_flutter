@@ -21,4 +21,24 @@ void main() {
     expect(result.month, 1);
     expect(result.day, 1);
   });
+
+  test("test toSolar", () {
+    final DateTime dateTime = DateTime(2023, 9, 10);
+
+    final DateTime result = dateTime.toSolar;
+
+    expect(result.year, 2023);
+    expect(result.month, 10);
+    expect(result.day, 24);
+  });
+
+    test("test toLunar", () {
+    final DateTime dateTime = DateTime(2023, 10, 24);
+
+    final DateTime result = dateTime.toLunar;
+
+    expect(result.year, 2023);
+    expect(result.month, 9);
+    expect(result.day, 10);
+  });
 }

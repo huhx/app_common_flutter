@@ -229,7 +229,7 @@ class CalendarConverter {
     0x2D92B5
   ];
 
-  static DateTime lunarToSolar(int year, int month, int monthDay) {
+  static DateTime toSolar(int year, int month, int monthDay) {
     Solar solar = Solar();
     int dayOffset;
     int leapMonth;

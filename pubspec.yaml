@@ -21,6 +21,7 @@ dependencies:
     git:
       url: https://github.com/huhx/flutter_pulltorefresh
       ref: main
+  lunar: ^1.6.1
 
 dev_dependencies:
   flutter_test:

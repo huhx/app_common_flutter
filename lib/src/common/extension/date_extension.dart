@@ -1,6 +1,7 @@
 import 'package:app_common_flutter/constant.dart';
 import 'package:app_common_flutter/support.dart';
 import 'package:intl/intl.dart';
+import 'package:lunar/lunar.dart';
 
 extension DateExtension on DateTime {
   String format(String pattern) {
@@ -12,7 +13,19 @@ extension DateExtension on DateTime {
   }
 
   DateTime get toSolar {
-    return CalendarConverter.lunarToSolar(year, month, day);
+    return CalendarConverter.toSolar(year, month, day);
+  }
+
+  DateTime get toLunar {
+    Lunar lunar = Lunar.fromDate(this);
+    return DateTime(
+      lunar.getYear(),
+      lunar.getMonth(),
+      lunar.getDay(),
+      lunar.getHour(),
+      lunar.getMinute(),
+      lunar.getSecond(),
+    );
   }
 
   int passDays(DateTime dateTime) {
