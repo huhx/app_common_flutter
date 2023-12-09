@@ -1,4 +1,5 @@
 import 'package:app_common_flutter/constant.dart';
+import 'package:app_common_flutter/support.dart';
 import 'package:intl/intl.dart';
 
 extension DateExtension on DateTime {
@@ -8,6 +9,10 @@ extension DateExtension on DateTime {
 
   String get dateString {
     return DateFormat(Comm.datePattern).format(this);
+  }
+
+  DateTime get toSolar {
+    return CalendarConverter.lunarToSolar(year, month, day);
   }
 
   String get timeString {
