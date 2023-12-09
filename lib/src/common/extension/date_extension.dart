@@ -15,6 +15,10 @@ extension DateExtension on DateTime {
     return CalendarConverter.lunarToSolar(year, month, day);
   }
 
+  int passDays(DateTime dateTime) {
+    return difference(dateTime).inDays;
+  }
+
   String get timeString {
     return DateFormat('hh:mm:ss').format(this);
   }
