@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:app_common_flutter/constant.dart';
+import 'package:crypto/crypto.dart';
 import 'package:intl/intl.dart';
 
 extension StringExtension on String {
@@ -12,6 +15,22 @@ extension StringExtension on String {
 
   DateTime toDate() {
     return parse(Comm.datePattern);
+  }
+
+  String toSha512() {
+    return sha512.convert(utf8.encode(this)).toString();
+  }
+
+  String encodeBase64() {
+    return base64Encode(utf8.encode(this));
+  }
+
+  String decodeBase64() {
+    try {
+      return utf8.decode(base64Decode(this));
+    } on Exception catch (_) {
+      return this;
+    }
   }
 
   DateTime parse(String pattern) {
