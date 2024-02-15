@@ -14,36 +14,23 @@ class CancelConfirmDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
+    return AlertDialog.adaptive(
       title: Text(title),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
-      ),
-      content: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Text(content),
-          const SizedBox(height: 30),
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              TextButton(
-                child: const Text("取消", style: TextStyle(color: Colors.red)),
-                onPressed: () => Navigator.pop(context),
-              ),
-              TextButton(
-                child: const Text("确定", style: TextStyle(color: Colors.green)),
-                onPressed: () {
-                  Navigator.pop(context);
-                  callback();
-                },
-              ),
-            ],
-          )
-        ],
-      ),
+      actionsOverflowButtonSpacing: 20,
+      content: Text(content),
+      actions: [
+        TextButton(
+          child: const Text("取消", style: TextStyle(color: Colors.red)),
+          onPressed: () => Navigator.pop(context),
+        ),
+        TextButton(
+          child: const Text("确定", style: TextStyle(color: Colors.green)),
+          onPressed: () {
+            Navigator.pop(context);
+            callback();
+          },
+        ),
+      ],
     );
   }
 }

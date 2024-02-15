@@ -7,8 +7,7 @@ class EmptyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
+    return Center(
       child: Text(message ?? "没有找到相关的内容"),
     );
   }
